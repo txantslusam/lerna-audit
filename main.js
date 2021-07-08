@@ -85,10 +85,10 @@ async function lernaAudit() {
             await savePackageJSON(lernaPackage.location, newPackageJson);
 
             console.log(`Run audit in ${lernaPackage.location}`);
-            const auditResult = spawnSync('npm', ['audit'], { cwd: lernaPackage.location, stdio: 'inherit', shell: true });
+            const auditResult = spawnSync('yarn', ['audit'], { cwd: lernaPackage.location, stdio: 'inherit', shell: true });
             if(auditResult.status !== 0 && argv.fix){
                 console.log('We will fix this for you');
-                spawnSync('npm', ['audit', 'fix'], { cwd: lernaPackage.location, stdio: 'inherit', shell: true });
+                spawnSync('yarn', ['audit', 'fix'], { cwd: lernaPackage.location, stdio: 'inherit', shell: true });
             }
             const restoredPackageJson = restorePackageJson(packagePaths, internalLernaDependencies);
 
