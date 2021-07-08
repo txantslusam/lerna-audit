@@ -4,7 +4,6 @@ const { Command, Option } = require('commander');
 
 const lernaAudit = require('./lib/main');
 
-const { env } = process;
 const flags = new Command()
   .addOption(
     new Option(
@@ -27,12 +26,6 @@ const flags = new Command()
   .addOption(
     new Option('--only [scope]', 'Set package updating scope')
       .choices(['prod', 'dev']),
-  )
-  .option('--silent [bool]', 'Disable log output', env.LAY_SILENT)
-  .option(
-    '--verbose [bool]',
-    'Switch log level to verbose/debug',
-    env.YAF_VERBOSE,
   )
   .option(
     '--report [bool]',
