@@ -16,7 +16,8 @@
   },
   "scripts": {
     "test": "jest",
-    "lint": "eslint --ext .js lib/"
+    "lint": "eslint --ext .js lib/",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -32,6 +33,11 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jest": "^24.3.6",
-    "jest": "^25.1.0"
+    "husky": "^7.0.1",
+    "jest": "^25.1.0",
+    "lint-staged": "^11.0.0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }
