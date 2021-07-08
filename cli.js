@@ -4,7 +4,7 @@ const { Command, Option } = require('commander');
 
 const lernaAudit = require('./lib/main');
 
-const env = process.env
+const { env } = process;
 const flags = new Command()
   .addOption(
     new Option(
@@ -26,7 +26,7 @@ const flags = new Command()
   )
   .addOption(
     new Option('--only [scope]', 'Set package updating scope')
-      .choices(['prod', 'dev'])
+      .choices(['prod', 'dev']),
   )
   .option('--silent [bool]', 'Disable log output', env.LAY_SILENT)
   .option(
@@ -39,8 +39,13 @@ const flags = new Command()
     'Show summary for packages',
     false,
   )
+  .option(
+    '--report-only [bool]',
+    'Run audit for report summary only',
+    false,
+  )
   .allowUnknownOption()
   .parse(process.argv)
-  .opts()
+  .opts();
 
-lernaAudit(flags)
+lernaAudit(flags);
