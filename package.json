@@ -1,29 +1,37 @@
 {
-  "name": "lerna-audit",
-  "version": "1.3.2",
-  "description": "Micro util to run npm audit for lerna packages (with autofix)",
+  "name": "lerna-audit-yarn",
+  "version": "1.0.0",
+  "description": "Micro util to run yarn audit for lerna packages (with autofix)",
   "contributors": [
-    "Tim Keiner <tim.keiner@consol.de>"
+    "Tim Keiner <tim.keiner@consol.de>",
+    "Mateusz Tomkowiak <matixnt1@windowslive.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tnobody/lerna-audit.git"
+    "url": "git+https://github.com/txantslusam/lerna-audit-yarn.git"
   },
-  "main": "main.js",
+  "main": "lib/main.js",
   "bin": {
-    "lerna-audit": "main.js"
+    "lerna-audit-yarn": "cli.js"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint --ext .js lib/"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
+    "commander": "^8.0.0",
     "json-parse-even-better-errors": "^2.3.1",
-    "yargs": "^15.4.1"
+    "yargs": "^15.4.1",
+    "yarn-audit-fix": "^6.3.5"
   },
   "devDependencies": {
+    "eslint": "7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jest": "^24.3.6",
     "jest": "^25.1.0"
   }
 }
