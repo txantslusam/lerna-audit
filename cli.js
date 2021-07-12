@@ -28,13 +28,13 @@ const flags = new Command()
       .choices(['prod', 'dev']),
   )
   .option(
-    '--report [bool]',
-    'Show summary for packages',
+    '--no-report [bool]',
+    'Do not show summary for packages',
     false,
   )
   .option(
-    '--report-only [bool]',
-    'Run audit for report summary only',
+    '--json [bool]',
+    'Log in json format',
     false,
   )
   .allowUnknownOption()

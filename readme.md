@@ -37,12 +37,12 @@ Or add a script to your `package.json` in root:
 | Parameter | Default | Description                                                 |
 |-----------|---------|-------------------------------------------------------------|
 | `--help`|    | Display all available options | 
-| `--audit-level [level]`| low   | (optional) Include a vulnerability with a level as defined or higher | 
 | `--fix`| false   | (optional) Audit will try to autofix vunerabilities | 
+| `--no-report`| false   | (optional) Do not show summary for packages | 
+| `--json`| false   | (optional) Log in JSON format | 
 | `--force`| false   | (optional) Have audit fix install semver-major updates to toplevel dependencies, not just semver-compatible ones | 
+| `--audit-level [level]`| low   | (optional) Include a vulnerability with a level as defined or higher | 
 | `--only [scope]`|    | (optional) Set package updating scope | 
-| `--report`| false   | (optional) Show summary of audit for packages | 
-| `--report-only`| false   | (optional) Run audit for report summary only | 
 
 ## Why
 
